@@ -17,7 +17,7 @@ public static class NewtonsoftJsonUtils
 
     public static string GetCurrentDirectory()
     {
-        // 開発中は C:/Users/%USERNAME%/AppData/LocalLow/DefaultCompany/Batting
+        // 開発中は C:/Users/%USERNAME%/AppData/LocalLow/DefaultCompany/プロジェクト名
         return Application.persistentDataPath;
     }
     
