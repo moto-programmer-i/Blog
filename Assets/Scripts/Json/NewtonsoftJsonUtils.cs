@@ -28,7 +28,7 @@ public static class NewtonsoftJsonUtils
     /// <typeparam name="T"></typeparam>
     /// <param name="filename">ファイル名</param>
     /// <param name="json"></param>
-    /// /// <param name="directory">ディレクトリ（空の場合はカレントになる）</param>
+    /// /// <param name="directory">ディレクトリ（空の場合はApplication.persistentDataPathになる）</param>
     public static void SaveJson<T>(string filename, T json, string directory = "")
     {
         // ディレクトリの指定がない場合はカレント
@@ -50,7 +50,7 @@ public static class NewtonsoftJsonUtils
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="filename"></param>
-    /// <param name="directory">ディレクトリ（空の場合はカレントになる）</param>
+    /// <param name="directory">ディレクトリ（空の場合はApplication.persistentDataPathになる）</param>
     /// <returns></returns>
     public static T LoadJson<T>(string filename, string directory = "")
     {
