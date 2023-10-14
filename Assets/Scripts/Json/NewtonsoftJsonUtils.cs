@@ -15,6 +15,8 @@ public static class NewtonsoftJsonUtils
         ContractResolver = new CamelCasePropertyNamesContractResolver()
     };
 
+    public static readonly JsonSerializer SERIALIZER = JsonSerializer.CreateDefault(JSON_SETTINGS);
+
     public static string GetCurrentDirectory()
     {
         // 開発中は C:/Users/%USERNAME%/AppData/LocalLow/DefaultCompany/プロジェクト名
@@ -40,8 +42,7 @@ public static class NewtonsoftJsonUtils
         // https://www.newtonsoft.com/json/help/html/SerializeWithJsonSerializerToFile.htm
         using (StreamWriter file = File.CreateText(Path.Combine(directory, filename)))
         {
-            JsonSerializer serializer = JsonSerializer.CreateDefault(JSON_SETTINGS);
-            serializer.Serialize(file, json);
+            SERIALIZER.Serialize(file, json);
         }
     }
 
@@ -61,9 +62,8 @@ public static class NewtonsoftJsonUtils
 
         using (StreamReader file = File.OpenText(Path.Combine(directory, filename)))
         {
-            JsonSerializer serializer = JsonSerializer.CreateDefault(JSON_SETTINGS);
             // なぜかジェネリックのメソッドが用意されてない
-            return (T)serializer.Deserialize(file, typeof(T));
+            return (T)SERIALIZER.Deserialize(file, typeof(T));
         }
     }
 }
