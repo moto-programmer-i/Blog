@@ -21,7 +21,7 @@ public class JsonPerformanceTest
         
         Measure.Method(() =>
         {
-            NewtonsoftJsonUtils.SaveJson(FILENAME, data);
+            NewtonsoftJsonUtils.SaveJson(data, FILENAME);
             data = NewtonsoftJsonUtils.LoadJson<Vector3Data>(FILENAME);
         })
         .MeasurementCount(MEASUREMENT_COUNT)

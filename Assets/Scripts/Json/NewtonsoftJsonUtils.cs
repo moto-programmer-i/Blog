@@ -31,7 +31,7 @@ public static class NewtonsoftJsonUtils
     /// <param name="filename">ファイル名</param>
     /// <param name="json"></param>
     /// /// <param name="directory">ディレクトリ（空の場合はApplication.persistentDataPathになる）</param>
-    public static void SaveJson<T>(string filename, T json, string directory = "")
+    public static void SaveJson<T>(T json, string filename, string directory = "")
     {
         // ディレクトリの指定がない場合はカレント
         if (string.IsNullOrEmpty(directory)) {
