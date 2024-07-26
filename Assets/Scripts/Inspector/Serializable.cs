@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // System.Serializable がついているとList内なら内部の変数が表示される

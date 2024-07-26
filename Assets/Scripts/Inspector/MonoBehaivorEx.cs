@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // MonoBehaviour がついているとリスト内では内部の変数が表示されない

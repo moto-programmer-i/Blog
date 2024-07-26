@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // 何もつけないクラスだと、ListにいれてもInspectorに表示されず、エラーになる
