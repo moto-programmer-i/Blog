@@ -482,7 +482,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1332105567}
   - component: {fileID: 1332105566}
-  - component: {fileID: 1332105565}
   m_Layer: 0
   m_Name: InspectorSample
   m_TagString: Untagged
@@ -490,19 +489,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1332105565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332105564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3a1eb7ce3b7074dbd56610ed9c871a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Num>k__BackingField: 0
 --- !u!114 &1332105566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,8 +503,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializables:
   - <Num>k__BackingField: 0
+  - <Num>k__BackingField: 0
   monoBehaivorEx:
   - {fileID: 1161924751}
+  - {fileID: 0}
 --- !u!4 &1332105567
 Transform:
   m_ObjectHideFlags: 0
