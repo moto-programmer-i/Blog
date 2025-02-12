@@ -1,0 +1,18 @@
+.item-button {
+    height: 100px;
+}
+
+.item-button .unity-radio-button__input {
+    opacity: 0;
+}
+
+.item-button:checked {
+    border-left-color: rgb(253, 9, 9);
+    border-right-color: rgb(253, 9, 9);
+    border-top-color: rgb(253, 9, 9);
+    border-bottom-color: rgb(253, 9, 9);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+}
