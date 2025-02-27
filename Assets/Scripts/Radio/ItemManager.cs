@@ -1,37 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class ItemManager : MonoBehaviour
 {
     [SerializeField]
-    private UIDocument ItemSelector;
+    private UIDocument itemSelector;
 
     [SerializeField]
-    private List<ItemSetting> ItemSettings = new();
+    private List<ItemSetting> itemSettings = new();
+
+    private ScrollView view;
     
     void Awake()
     {
-        var listView = ItemSelector.rootVisualElement.Q<ListView>();
+        view = itemSelector.rootVisualElement.Q<ScrollView>();
+        
+        // ラジオボタンを初期化
+        var radioButtonGroup = itemSelector.rootVisualElement.Q<RadioButtonGroup>();
+        radioButtonGroup.choices = itemSettings.ConvertAll(item => item.Name);
+        radioButtonGroup.value = 0;
 
-        // 選択するデータの指定
-        listView.itemsSource = ItemSettings;
+        // 選択時のイベント
+        radioButtonGroup.RegisterCallback<ChangeEvent<int>>((e) =>
+        {
+            radioButtonGroup.value = e.newValue;
 
-        // リストの要素作成時の処理
-        listView.makeItem = () => {
-            var button = new RadioButton();
-            // Radioボタンにussのクラスを追加
-            button.AddToClassList(ItemSetting.ButtonClassName);
-            return button;
-        };
+            // 選択されたら非表示に
+            // view.style.display = DisplayStyle.None;
+        });
 
-        // 要素の対応
-        listView.bindItem = (e, i) => {
-            RadioButton button = e as RadioButton;
-            button.label = ItemSettings[i].Name;
-            button.style.backgroundImage = ItemSettings[i].Icon;
-        };
-
+        // ラジオボタンの設定
+        var radioButtons = radioButtonGroup.Children();
+        for (int i = 0; i < itemSettings.Count; ++i) {
+            var radioButton = radioButtons.ElementAt(i) as RadioButton;
+            radioButton.style.backgroundImage = itemSettings[i].Icon;
+        }
     }
 }

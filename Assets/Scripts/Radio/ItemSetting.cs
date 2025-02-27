@@ -7,8 +7,8 @@ using UnityEngine;
 [System.Serializable]
 public class ItemSetting
 {
-    // .item-buttonとすると対応しないので注意
-    public const string ButtonClassName = "item-button";
+    // .select-itemとすると対応しないので注意
+    public const string GroupClassName = "select-item";
 
     [field: SerializeField]
     public string Name { get; set; }

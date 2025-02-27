@@ -1,0 +1,22 @@
+.select-item > .unity-label {
+    display: none;
+}
+
+.select-item .unity-radio-button {
+    height: 100px;
+}
+
+.select-item .unity-radio-button__checkmark-background {
+    display: none;
+}
+
+.select-item .unity-radio-button:checked {
+    border-left-color: rgb(255, 0, 0);
+    border-right-color: rgb(255, 0, 0);
+    border-top-color: rgb(255, 0, 0);
+    border-bottom-color: rgb(255, 0, 0);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+}

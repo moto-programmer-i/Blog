@@ -1,5 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/itemSelector.uss?fileID=7433441132597879392&amp;guid=c30736d6c4388a34a9badd1ed227faa4&amp;type=3#itemSelector" />
-    <ui:ListView focusable="true" fixed-item-height="100" show-border="true" style="height: 90%;" />
-    <ui:RadioButton label="Radio Button" value="false" name="RadioButton" class="item-button" style="display: none;" />
+    <Style src="project://database/Assets/UI%20Toolkit/itemSelector.uss?fileID=7433441132597879392&amp;guid=4d1b61443b89c0b4abbaee32c092a24e&amp;type=3#itemSelector" />
+    <ui:ScrollView style="height: 90%;">
+        <ui:RadioButtonGroup label="Radio Button Group" value="-1" choices="UnityEngine.UIElements.RadioButtonGroup+&lt;get_choices&gt;d__7" class="select-item" />
+    </ui:ScrollView>
 </ui:UXML>
